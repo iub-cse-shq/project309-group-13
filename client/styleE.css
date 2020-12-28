@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+HK:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+
+body{
+    font-family: 'Lato',sans-serif,'Roboto Condensed';
+    line-height: 1;
+}
+
+ul{
+    list-style-type: none; 
+}
+
+
+
+
+
+/* Navbar  */
+.navbar,
+.navbar-custom{
+    font-family: 'Lato',sans-serif,'Roboto Condensed';
+    z-index: 2;
+}
+.nav-item{
+    color: #ffff;
+}
+.navbar li:hover{
+    cursor: pointer;
+    border-bottom: 2px #fff solid;
+}
+.dashboard{
+    padding: 4rem;
+    background-image: url('https://www.builderblueprint.com/wp-content/uploads/2018/07/owner-builder-new-home-construction-low-cost-1200x800.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+

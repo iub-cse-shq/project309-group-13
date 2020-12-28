@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer | Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styleE.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-dark navbar-expand-lg d-flex flex-row" style="background-color: #032412;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../photos/thikana1.JPG" width="200" height="100"
+                    class=" d-inline-block align-center rounded-circle" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex mr-auto w-100 justify-content-end">
+                    <li class="nav-item active">
+                        <!-- <i class="fa fa-user-circle-o" style="background-color: #fff;" aria-hidden="true"></i> -->
+                        <a class="nav-link text-decoration-none" href="#">
+
+                            Dashboard
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            
+                            Notifications</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="container-dashboard">
+            <div class="user-header">
+                <div class="user-img">
+                    <img src="../photos/thikana1.JPG" width="150" alt="">
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Alexander</h3>
+                    <div id="address">
+                        <p id="area">Jamalpur,</p>
+                        <span class="country">
+                            Bangladesh
+                        </span>
+                    </div>
+                </div>
+                <div class="user-option">
+                    <div id="notification">
+                        <i class="fa fa-bell"></i>
+                        <span id="notification-num">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+
+            </div>
+        </div>
+    </section>
+    <!-- <div id="welcome"></div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="../server/server.js"></script>
+</body>
+
+</html>
