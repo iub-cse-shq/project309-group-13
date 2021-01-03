@@ -1,150 +1,173 @@
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineer | Dashboard</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Engineer | Dashboard</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styleE.css">
-</head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styleE.css">
+    </head>
 
-<body>
-    <nav class="navbar navbar-custom navbar-dark navbar-expand-lg d-flex flex-row" style="background-color: #032412;">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../photos/thikana1.JPG" width="200" height="100"
-                    class=" d-inline-block align-center rounded-circle" alt="Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <body>
+        <nav class="navbar navbar-custom navbar-dark navbar-expand-lg d-flex flex-row"
+            style="background-color: #032412;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="../photos/thikana1.JPG" width="200" height="100"
+                        class=" d-inline-block align-center rounded-circle" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav d-flex mr-auto w-100 justify-content-end">
-                    <li class="nav-item active">
-                        <!-- <i class="fa fa-user-circle-o" style="background-color: #fff;" aria-hidden="true"></i> -->
-                        <a class="nav-link text-decoration-none" href="#">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex mr-auto w-100 justify-content-end">
+                        <li class="nav-item active">
+                            <!-- <i class="fa fa-user-circle-o" style="background-color: #fff;" aria-hidden="true"></i> -->
+                            <a class="nav-link text-decoration-none" href="#">
 
-                            Dashboard
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <!-- <li class="nav-item">
+                                Dashboard
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
                         <a class="nav-link" href="#">
                             
                             Notifications</a>
                     </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
 
-            </div>
-        </div>
-    </nav>
-
-    <section class="dashboard">
-        <div class="container-dashboard">
-            <div class="user-header">
-                <div class="user-img">
-                    <img src="../photos/thikana1.JPG" width="150" alt="">
-                </div>
-                <div class="user-info">
-                    <h3 id="user-name">Alexander</h3>
-                    <div id="address">
-                        <p id="area">Jamalpur,</p>
-                        <span class="country">
-                            Bangladesh
-                        </span>
-                    </div>
-                </div>
-                <div class="user-option">
-                    <div id="notification">
-                        <i class="fa fa-bell"></i>
-                        <span id="notification-num">3</span>
-                    </div>
                 </div>
             </div>
-            <div class="content">
-                <div class="profile-view" id="sidebar">
-                    <div class="basic" id="basic-info">
-                        <p class="phone" id="phone">
-                            <i class="fa fa-phone"></i>
-                            +8801637535578
-                        </p>
-                        <p id="mail">
-                            <i class="fa fa-envelope"></i>
-                            breadbutterjelly@gmail.com
-                        </p>
-                        <div id="user-description">
-                            <h5>Description</h5>
-                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-                                voluptate.</p>
+        </nav>
 
+        <section class="dashboard">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="user-header">
+                        <div class="user-img">
+                            <img src="../photos/thikana1.JPG" class="img-fluid cirlce mx-auto d-block" width="150"
+                                border-radius='50%' alt="">
                         </div>
-                        <div class="rating">
-                            <h3 id="rating">4.3</h3>
-                            <div class="rate">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                        <div class="user-info">
+                            <h3 id="user-name">Alexander</h3>
+                            <div class='address' id="address">
+                                <p id="area">Jamalpur,</p>
+                                <span class="country">
+                                    Bangladesh
+                                </span>
+                            </div>
+                        </div>
+                        <div class="user-option">
+                            <div id="notification">
+                                <i class="fa fa-bell"></i>
+                                <span id="notification-num">3</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row justify-content">
 
-                <div class="right-side">
-                    <div class="nav">
-                        <ul>
-                            <li onclick="tabs(0)" class="user-profile-active">Profile</li>
-                            <li onclick="tabs(1)" class="user-projects">Projects</li>
-                            <li onclick="tabs(2)" class="user-settings">Settings</li>
-                        </ul>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+
+
+                        <div class="content">
+                            <div class="profile-view" id="sidebar">
+                                <div class="basic" id="basic-info">
+                                    <p class="phone" id="phone">
+                                        <i class="fa fa-phone"></i>
+                                        +8801637535578
+                                    </p>
+                                    <p id="mail">
+                                        <i class="fa fa-envelope"></i>
+                                        breadbutterjelly@gmail.com
+                                    </p>
+                                    <div id="user-description">
+                                        <h5>Description</h5>
+                                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Earum,
+                                            voluptate.</p>
+
+                                    </div>
+                                    <div class="rating">
+                                        <h3 id="rating">4.3</h3>
+                                        <div class="rate">
+                                            <div class="stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dashboard-body">
-                        <div class="profile tab">
-                            <h1>Edit Profile</h1>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="project tab">
-                            <h1>Projects</h1>
-                            <p>Lorem ipsum dolor sit amet.
-                            </p>
-                        </div>
-                        <div class="project tab">
-                            <h1>Settings</h1>
-                            <p>Lorem ipsum dolor sit amet.
-                            </p>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+
+                        <div class="right-side">
+
+                            <div class="bar">
+
+                                <ul>
+                                    <li onclick="tabs(0)" class=" user-profile active">Profile</li>
+                                    <li onclick="tabs(1)" class=" user-projects">Projects</li>
+                                    <li onclick="tabs(2)" class=" user-settings">Settings</li>
+                                </ul>
+                            </div>
+
+                            <div class="dashboard-body">
+                                <!-- -->
+                                <div class="profile tab">
+                                    <h1>Edit Profile</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div class="project tab">
+                                    <h1>Projects</h1>
+                                    <p>Lorem ipsum dolor sit amet.
+                                    </p>
+                                </div>
+                                <div class="settings tab">
+                                    <h1>Settings</h1>
+                                    <p>Lorem ipsum dolor sit amet.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-
-
 
             </div>
 
-        </div>
-    </section>
-    <!-- <div id="welcome"></div> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
-    <script src="../server/server.js"></script>
-</body>
+        </section>
+        <!-- <div id="welcome"></div> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+        <script src="../server/server.js"></script>
+    </body>
 
 </html>
