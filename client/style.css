@@ -44,6 +44,7 @@ nav.logo {
 nav .menu {
   width: 40%;
   font-size: 20px;
+  display: inline-block;
 }
 
 nav .menu a {
@@ -52,9 +53,14 @@ nav .menu a {
   font-weight: bold;
 }
 
+.menu input {
+  background: #eee;
+  border: none;
+}
+
 .menu a:hover {
   cursor: pointer;
-  background-color: rgb(170, 17, 17);
+  border-bottom: 2px #fff solid;
 }
 .menu a i {
   color: black;
@@ -116,7 +122,8 @@ nav .menu1 a {
 }
 
 .menu1 a:hover {
-  background-color: rgb(170, 17, 17);
+  cursor: pointer;
+  border-bottom: 2px #fff solid;
 }
 .sticky {
   position: fixed;
