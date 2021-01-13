@@ -126,7 +126,17 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script> -->
     <!-- scipt  -->
-    <script src="/client/inUp.js"></script>
+    <script>
+            const signUpbtn = document.getElementById('register');
+            const signInbtn = document.getElementById('login');
+            const container = document.getElementById('container');
+
+            signUpbtn.addEventListener('click', () =>
+                container.classList.add('right-panel-active'));
+
+            signInbtn.addEventListener('click', () =>
+                container.classList.remove('right-panel-active'));
+    </script>
 </body>
 
 </html>
