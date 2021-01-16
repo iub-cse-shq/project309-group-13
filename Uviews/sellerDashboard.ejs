@@ -15,10 +15,8 @@
             crossorigin="anonymous" />
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" 
-        rel="stylesheet">
-        <link rel="stylesheet" href= "<%- myCss.style %>" >
-      
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styleE.css">
     </head>
 
     <body>
@@ -220,59 +218,71 @@
                             </div>
 
                             <div class="project tab">
+
+
                                 <div class="container">
-                                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">
-                                            <span class="material-icons">
-                                                add_circle
-                                            </span>
-                                            <br>
-                                            Add New Product
+                                    <button class="btn btn-primary" type="button" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <span class="material-icons">
+                                            add_circle
+                                        </span>
+                                        <br>
+                                        Add New Product
                                         </span>
                                     </button>
 
 
-                                    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                        aria-hidden="true">
+                                    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1"
+                                        role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h2 class="modal-title" id="exampleModalLabel">Add New Product</h2>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                   
+
                                                     <form>
                                                         <div class="form-group">
                                                             <label for="product-photo">Upload New Photo</label>
                                                             <!-- <input type="text" class="form-control" id="inputAddress2" placeholder=""> -->
-                                                        
+
                                                             <div class="input-group mb-3">
                                                                 <div class="custom-file">
-                                                                    <input type="file" class="custom-file-input" id="product-photo">
-                                                                    <label class="custom-file-label" for="product-photo">Choose
+                                                                    <input type="file" class="custom-file-input"
+                                                                        id="product-photo">
+                                                                    <label class="custom-file-label"
+                                                                        for="product-photo">Choose
                                                                         file</label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" id="product-name" placeholder="Product Name">
-                                                        </div>
-                                                        <div class="form-group">                                
-                                                            <textarea class="form-control" id="product-description" placeholder="Description"></textarea>
+                                                            <input type="text" class="form-control" id="product-name"
+                                                                placeholder="Product Name">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="number" class="form-control" id="product-price" placeholder="Product Unit Price">
+                                                            <textarea class="form-control" id="product-description"
+                                                                placeholder="Description"></textarea>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="number" class="form-control" id="product-quantity" placeholder="Number of Products">
+                                                            <input type="number" class="form-control" id="product-price"
+                                                                placeholder="Product Unit Price">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control"
+                                                                id="product-quantity" placeholder="Number of Products">
                                                         </div>
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-primary" id="product-add">ADD PRODUCT</button>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary" id="product-add">ADD
+                                                        PRODUCT</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -282,66 +292,38 @@
 
                                 </div>
 
+
                                 <div class="d-flex flex-wrap">
-                                    <div class="card">
-                                        <img class="card-img-top" src="/client/images/project11.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and
-                                                make up the bulk of the card's
-                                                content.</p>
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">Cras justo odio</li>
-                                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                                            <li class="list-group-item">Vestibulum at eros</li>
-                                        </ul>
-                                        <div class="card-body">
-                                            <a href="#" class="card-link">Card link</a>
-                                            <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                    </div>
+                                    <%for(let i=0;i<product.length;i++){%>
 
-                                    <div class="card">
-                                        <img class="card-img-top" src="/client/images/project22.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and
-                                                make up the bulk of the card's
-                                                content.</p>
+                                        <div class="card">
+                                            <img class="card-img-top" src=" <
+                                                %=product[i].photoUrl%> "
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%=product[i].name%>
+                                                </h5>
+                                                <p class="card-text">
+                                                    <%=product[i].description%>
+                                                </p>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <%=product[i].quantity%>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <%=product[i].unitPrice%>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <%=product[i].discount%>
+                                                </li>
+                                            </ul>
+                                            <div class="card-body">
+                                                <a href="#" class="card-link">Edit</a>
+                                                <a href="#" class="card-link">Delete</a>
+                                            </div>
                                         </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">Cras justo odio</li>
-                                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                                            <li class="list-group-item">Vestibulum at eros</li>
-                                        </ul>
-                                        <div class="card-body">
-                                            <a href="#" class="card-link">Card link</a>
-                                            <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <img class="card-img-top" src="/client/images/project33.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and
-                                                make up the bulk of the card's
-                                                content.</p>
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">Cras justo odio</li>
-                                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                                            <li class="list-group-item">Vestibulum at eros</li>
-                                        </ul>
-                                        <div class="card-body">
-                                            <a href="#" class="card-link">Card link</a>
-                                            <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                    </div>
                                 </div>
 
                             </div>
@@ -370,18 +352,18 @@
         <!-- scripts ends  -->
         <script>
             $('#bar ul li').click(function () {
-                    $(this).addClass('active').siblings().removeClass('active');
-                })
-                const tabBtn = document.querySelectorAll('#bar');
-                const tab = document.querySelectorAll('.dashboard-body>.tab');
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+            const tabBtn = document.querySelectorAll('#bar');
+            const tab = document.querySelectorAll('.dashboard-body>.tab');
 
-                function tabs(panelIndex) {
-                    tab.forEach(function (node) {
-                        node.style.display = 'none';
-                    })
-                    tab[panelIndex].style.display = 'block';
-                }
-                tabs(0);
+            function tabs(panelIndex) {
+                tab.forEach(function (node) {
+                    node.style.display = 'none';
+                })
+                tab[panelIndex].style.display = 'block';
+            }
+            tabs(0);
         </script>
     </body>
 

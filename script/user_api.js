@@ -64,10 +64,11 @@ function signInApi(email)
 function userLandingPageGenarate(userType){
     $.ajax({
         method:"GET",
-        url: 'user/account/render/'+userType,
+        url: '/account/render/change',
              
         success: successCallback = (response)=>{
-            console.log('response')
+            
+            console.log(response)
            
         },
         error: errorCallback = (response) =>{

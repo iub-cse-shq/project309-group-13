@@ -52,7 +52,7 @@ function signInButtonOnclick() {
     userType = $("#inUserType").val()
 
     if (user.password === password && user.userType === userType) {
-        //alert("login success " + user._id)
+       // alert("login success " + user._id)
         userLandingPageGenarate(userType.toLowerCase())
     }
 
