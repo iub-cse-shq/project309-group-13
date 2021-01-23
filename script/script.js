@@ -196,7 +196,9 @@ $('#allEngineer').click(function(){
 })
 
 $('#dashboard').click(function(){
-    document.getElementsByClassName("customerDashboardView")[0].style.display = "block"
+    var id = $('#userID').text()
+    if(id != 'nan'){
+        document.getElementsByClassName("customerDashboardView")[0].style.display = "block"
     document.getElementsByClassName("landingView")[0].style.display = "none"
     document.getElementsByClassName("allProductView")[0].style.display = "none"
     document.getElementsByClassName("allProjectView")[0].style.display = "none"
@@ -205,6 +207,12 @@ $('#dashboard').click(function(){
 
     //cart table view
     cartTableView()
+
+    }
+    else{
+        window.location.replace("/signInUp")
+    }
+    
 
 })
 
@@ -309,17 +317,20 @@ $('#payment').click(function(){
     cartTableView()
 })
 
+
+
 $('#logout').click(function(){
+ 
     var cart= JSON.parse(window.localStorage.getItem('cart'))
     if(cart){
         var result = confirm("Your added Item will be erase. Please Confirm your purchase")
         if(result){
             localStorage.removeItem('cart')
-            window.location.replace('/')
+            window.location.replace('/signInUp')
         }
     }
     else{
-        window.location.replace('/')
+        window.location.replace('/signInUp')
     }
 
 })

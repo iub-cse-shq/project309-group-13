@@ -26,6 +26,32 @@ app.use(express.static(HTML_DIR))
 app.set('view engine', 'ejs');
 
 app.get('/', function (request, response) {
+
+    Product.find({}, function (err, data) {
+        User.find({userType:'Engineer'}, function (err, engineerData) {
+            Project.find({}, function (err, projectData) {
+                response.render('customerHome.ejs',{ 
+                product: data,
+                project:projectData,
+                engineer: engineerData,
+                customer: {
+                    _id:"nan",
+                    name:"n/a",
+                    email:"n/a",
+                    phoneNumber:"n/a" ,
+                    description:"n/a",
+                    image: '/client/images/avatar.png',
+                    address: "n/a"
+                    },
+                message:{}
+              })
+            })
+        })
+    })
+    //response.render('signInUp.ejs')
+})
+
+app.get('/signInUp', function (request, response) {
     response.render('signInUp.ejs')
 })
 
@@ -115,7 +141,7 @@ app.get('/render/change/:id', function (request, response) {
                             project:projectData,
                             engineer: engineerData,
                             customer: info,
-                            message:message
+                            message:{}
                             })
                           })
                         })
