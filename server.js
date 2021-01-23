@@ -4,16 +4,9 @@ var bodyParser = require('body-parser')
 
 var app = express()
 const fs = require('fs')
-var myCss = {
-    style : fs.readFileSync('public/styleE.css','utf8')
-};
-var myCss2 = {
-    style : fs.readFileSync('public/inUp.css','utf8')
-};
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-var sever = http.Server(app)
+var server = http.Server(app)
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 var dbURL = 'mongodb://localhost:27017/project'
@@ -21,26 +14,22 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connection.on('error', function (error) {
     console.log(error)
 })
-//app.use(express.static('model'))
-
 app.use(express.static('public'))
 var User = require('./model/user.model.js')
 var Product = require('./model/product.model.js')
+var Project =  require('./model/project.model.js')
+var Data =  require('./model/data.model.js')
 const path = require('path')
+const { Console } = require('console')
 const HTML_DIR = path.join(__dirname)
 app.use(express.static(HTML_DIR))
-
-
+app.set('view engine', 'ejs');
 
 app.get('/', function (request, response) {
-   // setTimeout('', 5000);
-    response.render('signInUp.ejs',{ myCss: myCss2})
-    console.log("index")
-    // var direct = path.join(__dirname,'client/signInUp.html')
-    // response.sendFile(direct)
+    response.render('signInUp.ejs')
 })
+
 app.get('/change', function (request, response) {
-    console.log("change ")
     //change page to user type
     response.sendFile(__dirname+'/client/signInUp.html')
 })
@@ -53,7 +42,6 @@ app.get('/user/account', function (request, response) {
                 error:'data is missing'
             })
         }
-        console.log("get test")
         return response.status(200).json(JSON.stringify(data))
     })
 })
@@ -66,73 +54,100 @@ app.get('/user/account/:email', function (request, response) {
                 error:'data is missing'
             })
         }
-     
         return response.status(200).json(JSON.stringify(data))
     })
 })
 
-/*app.get('/user/account/render', function (request, response) {
-    User.find({}, function (err, data) {
-        console.log(data)
-        response.render('article.ejs',{
-            article:data
-        })
+app.get("/notification/receive/:id", function(request,response){
+    Data.find({receiver:request.params.id},function(err,data){
+        if(err){
+            return response.status(400).json({
+                error:'data is missing'
+            })
+        }
+        return response.status(200).json(JSON.stringify(data))
     })
-    //console.log('pageName')
-  //  var pageName = request.params.userType+"Dashboard.ejs";
-    //console.log(pageName)
-    // response.render('sellerDashboard.ejs', {
-    //     product: {
-    //         name:"kathl",
-    //         price:"1200",
-    //         description: "errrrrrrr",
-    //         quantity: "120"           
-           
-    //     }
-    //   })
-
-
-    
-//     Product.find({}, function (err, data) {        
-//         response.render('article.ejs', {
-//             article: data
-//           })
-        
-//        console.log('pageName')
-    
-// })
 })
 
-// app.get('/user/account/render/:userType', function (request, response) {
-//     Article.findById(request.params.id, function (err, data) {
-//       response.render('article.ejs', {
-//         article: data
-//       })
-//     })
-//    })
 
-// app.get('/signup', function (request, response) {
-//     //var direct = path.join(__dirname,'client/signInUp.html')
-//     console.log("test")
-//     response.sendFile(__dirname+"/client/sellerDashboard.html")
-// })
-*/
-app.get('/account/render/change', function (request, response) {
+
+app.get('/render/change/:id', function (request, response) {
+
+        User.findById(request.params.id, function(error, info){
+            if(error){
+                return response.status(400).json({
+                    error:'data is missing'
+                })
+            }
+
+            if(info.userType === 'Seller'){
+                Product.find({sellerId: request.params.id}, function (err, data) {
+                  Data.find({receiver:request.params.id},function(err,message){
+                    response.render('sellerDashboard.ejs',{ 
+                    product: data,
+                    seller: info,
+                    message:message
+                        })
+                    })
+                })
+            }
+            else if(info.userType === 'Engineer'){
+                Project.find({engineerId: request.params.id}, function (err, data) {
+                    Data.find({receiver:request.params.id},function(err,message){
+                        
+                        response.render('engineerDashboard.ejs',{ 
+                        project: data,
+                        engineer: info,
+                        message:message
+                        })
+                        })
+                })
+
+            }
+            else if(info.userType === 'Customer'){
+                Product.find({}, function (err, data) {
+                    User.find({userType:'Engineer'}, function (err, engineerData) {
+                        Project.find({}, function (err, projectData) {
+                            Data.find({receiver:request.params.id},function(err,message){
+                               
+                            response.render('customerHome.ejs',{ 
+                            product: data,
+                            project:projectData,
+                            engineer: engineerData,
+                            customer: info,
+                            message:message
+                            })
+                          })
+                        })
+                    })
+                })
+
+            }
     
-    console.log("get test")
-   // Product.find({}, function (err, data) {
-        
-       // console.log("adel: "+ __dirname)
-     response.render('sellerDashboard.ejs',{ myCss: myCss})
+        })  
      
-     // console.log("saif: "+ __dirname)
-   // })
    })
+
+
+
+   app.post('/notification/request/engineer', function(request,response){
+    
+        NewData = Data(request.body)
+        NewData.save(function (err, data) {
+            if (err) {
+                return response.status(400).json({ error: "send request fails" })
+            }
+            return response.status(200).json({
+                message: "successfully added"
+            })
+    })
+
+   })
+
 
 
 app.post('/user/account', function (request, response) {
     NewUser = User(request.body)
-    console.log("server account test")
     NewUser.save(function (err, data) {
         if (err) {
 
@@ -146,7 +161,95 @@ app.post('/user/account', function (request, response) {
     })
 })
 
-sever.listen(process.env.PORT || 3000)
+app.post('/seller/product/add', function (request, response) {
+    NewProduct = Product(request.body)
+    NewProduct.save(function (err, data) {
+        if (err) {
+
+            return response.status(400).json({ error: "add request fails" })
+        }
+
+        return response.status(200).json({
+            message: "successfully added"
+        })
+
+    })
+})
+
+app.post('/engineer/project/add', function (request, response) {
+    NewProject = Project(request.body)
+    NewProject.save(function (err, data) {
+        if (err) {
+
+            return response.status(400).json({ error: "add request fails" })
+        }
+
+        return response.status(200).json({
+            message: "successfully added"
+        })
+
+    })
+})
+
+
+app.put('/update/user/info/:id', function(request,response){
+ User.findByIdAndUpdate(request.params.id,request.body,{new:true },function(err,data){
+        if(err){
+            response.status(400).json({error:"update request fails"})
+          }
+           response.status(200).json({
+              message:"successfully updated"
+          })
+    })
+})
+
+
+app.put('/product/purchase/:id', function(request,response){
+    Product.findByIdAndUpdate(request.params.id,request.body,{new:true },function(err,data){
+           if(err){            
+               response.status(400).json({error:"update request fails"})
+             }
+            
+             return response.status(200).json(JSON.stringify(data))
+       })
+   })
+
+app.put('/accepted/notification/:id', function(request,response){
+
+    Data.findByIdAndUpdate(request.params.id,request.body,{new:true },function(err,data){
+           if(err){
+               response.status(400).json({error:"update request fails"})
+             }
+            
+              response.status(200).json({
+                 message:"successfully updated"
+             })
+       })
+   })
+
+app.delete('/message/user/request/delete/:id',function(request, response){
+    Data.findByIdAndRemove(request.params.id, function (err, data) {
+        if(err){
+         return response.status(400).json({error:"delete request fails"})
+        }
+        return response.status(200).json({
+            message:"successfully deleted"
+        })
+    })
+})
+
+app.delete('/project/remove/:id',function(request, response){
+    Project.findByIdAndRemove(request.params.id, function (err, data) {
+        if(err){
+         return response.status(400).json({error:"delete request fails"})
+        }
+        return response.status(200).json({
+            message:"successfully deleted"
+        })
+    })
+})
+
+server.listen(process.env.PORT || 3000)
 process.env.IP || 'localhost', function () {
-    console.log("surver running")
+    console.log("server running")
 }
