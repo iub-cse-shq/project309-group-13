@@ -48,7 +48,6 @@ app.get('/', function (request, response) {
             })
         })
     })
-    //response.render('signInUp.ejs')
 })
 
 app.get('/signInUp', function (request, response) {
@@ -56,7 +55,6 @@ app.get('/signInUp', function (request, response) {
 })
 
 app.get('/change', function (request, response) {
-    //change page to user type
     response.sendFile(__dirname+'/client/signInUp.html')
 })
 
@@ -141,7 +139,7 @@ app.get('/render/change/:id', function (request, response) {
                             project:projectData,
                             engineer: engineerData,
                             customer: info,
-                            message:{}
+                            message:message
                             })
                           })
                         })

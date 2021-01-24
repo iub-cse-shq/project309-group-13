@@ -345,7 +345,7 @@ $('.requestEngineer').click(function(){
         sender: msgInfo[1],
         type: 'request',
         result: 'sending' ,
-        content:msgInfo[2]+" send you plan request" 
+        content:msgInfo[2]+" send you a plan request" 
     }
     sendRequest(data)
 })
@@ -402,31 +402,4 @@ $('.messageRow').click(function(){
     
 })
 
-
-// $('#notification').click(function(){
-//    var id = getID($('#userID').text())
-//    //console.log("check 1")
-//    getNotification(id)
-//    console.log("check 1")
-// })
-
-// function showNotification(message){
-//     var id= getNotification($('#userID').text())
-//     if(message){
-//         for(var i=0; i<message.length; i++)
-//         {
-//             if(message.receiver === id){
-//                 var span = $('<span class="notification-view"> </span>')
-//                 var msg = $('<h5>').text(message[i].content)
-//                 var acceptBtn = $(' <button type="button" class="btn btn-success" value="'+message[i]._id+'">ACCEPT</button>')
-//                 var rejectBtn = $(' <button type="button" value="'+message[i]._id+'" class="btn btn-danger">REJECT</button>')
-
-//                 $('setNotification').append(span.append(msg,$('<div>').append(acceptBtn,rejectBtn)))
-
-
-//             }
-//         }
-//     }
-
-// }
 

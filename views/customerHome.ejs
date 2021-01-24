@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bechakena</title>
+    <title>Customer | Thikana</title>
     
     <!--bootstrap-->
   
@@ -71,7 +71,7 @@
               <p class="id" style="display: none;"><%=product[j]._id%></p>
           </div>
           <ul class="list-group list-group-flush">
-              <li class="list-group-item price"><%= product[j].price%> Take</li>
+              <li class="list-group-item price"><%= product[j].price%> BDT</li>
           </ul>
           <div class="card-body">
               <a  class="card-link productADD" id="<%-j%>">Add Card</a>
@@ -94,7 +94,7 @@
             <p class="projectEngineerID" style="display: none;"><%= project[j].engineerId%></p>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Designer by <%= project[j].engineerName%></li>
-                <li class="list-group-item">Approx. cost <%-project[j].cost%> take.</li>
+                <li class="list-group-item">Approx. cost <%-project[j].cost%> BDT.</li>
             </ul>
             <div class="card-body">
                 <a  class="card-link projectRequest" id="<%-j%>" data-toggle="tooltip" data-placement="bottom" title="Request to engineer to know more">REQUEST</a>
@@ -138,6 +138,7 @@
 
 
     <!-- product view -->
+    <br>
      <span class="t-view">
       <h2 class="title"> Products </h2>
      </span> 
@@ -163,7 +164,7 @@
                         <p class="quantity" style="display: none;"><%=product[j].quantity%></p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item price"><%= product[j].price%> Take</li>
+                        <li class="list-group-item price"><%= product[j].price%> BDT</li>
                     </ul>
                     <div class="card-body">
                         <a  class="card-link productADD" id="<%-j%>">Add Card</a>
@@ -210,7 +211,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Designer by <%=project[j].engineerName%></li>
-                        <li class="list-group-item">Approx. cost <%-project[j].cost%> take.</li>
+                        <li class="list-group-item">Approx. cost <%-project[j].cost%> BDT.</li>
                     </ul>
                     <div class="card-body">
                         <a  class="card-link projectRequest" id="<%-j%>" data-toggle="tooltip" data-placement="bottom" title="Request to engineer to know more">REQUEST</a>
@@ -277,8 +278,6 @@
         <span class="sr-only">Next</span>
       </a>
     </div> 
-
-
 </div>
 
 
@@ -287,8 +286,6 @@
 <div class="customerDashboardView">
   <section class="container-fluid dashboard">
     <div class="row justify-content">
-
-        <!-- <div class="row"> -->
         <div class="user-header">
             <div class="user-img">
                 <img id="dp" src="<%- customer.image %>" class="img-fluid cirlce mx-auto d-block" width="150"
@@ -312,40 +309,13 @@
                 </div>
 
             </div>
-            <!-- <div class="user-option">
-                <div id="notification">
-                    <i class="fa fa-bell"></i>
-                    <span id="notification-num">3</span>
-                </div>
-            </div> -->
+
         </div>
-        <!-- </div> -->
     </div>
-    <!-- </div> -->
     <div class="row d-flex justify-content-between">
         <!--  -->
         <div class="col-lg-4 col-md-4 col-sm-4 ">
             <p id="userID" style="display: none;"><%=customer._id.toString()%></p>
-
-            <!-- <div class="container-fluid content">
-                <div class="profile-view" id="sidebar">
-                    <div class="basic" id="basic-info">
-                        <p class="phone" id="phone">
-                            <i class="fa fa-phone"></i>
-                            <%= customer.phoneNumber %>
-                        </p>
-                       
-                        <p id="userID" style="display: none;">
-                                                            
-                        <%=customer._id.toString()%></p>
-                        <p id="mail">
-                            <i class="fa fa-envelope"></i>
-                            <%= customer.email %>
-                        </p>
-                        
-                    </div>
-                </div>
-            </div> -->
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-7">
@@ -389,7 +359,6 @@
                         <table class="table table-hover">
                             <tbody>
                               <%for(var i=0; i<message.length; i++){%>
-                                  
                                 <tr >
                                     <td><%= message[i].senderName%></td>
                                     <p class="receiverClient" style="display: none;"><%=message[i].sender%></p>

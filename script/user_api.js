@@ -72,7 +72,6 @@ $('#signInButtonOn').click(function(){
 })
 
 $('#product-add').click(function(){
-
    var data = {
     
     name:  $('#product-name').val(),
@@ -80,7 +79,7 @@ $('#product-add').click(function(){
     description: $('#product-description').val(),
     quantity:  $('#product-quantity').val(),
     image:  getFilePath($('#product-photo').val()),
-    sellerId: getID($('#sellerID').text())
+    sellerId: getID($('#userID').text())
    }
 
    $.ajax({
